@@ -12,6 +12,7 @@
 <meta property="og:url" content="https://hopes4.me/2018/05/10/2018-05-10-the-finished-books/index.html">
 <meta property="og:site_name" content="我是清都山水郞">
 <meta property="og:description" content="这几天陆续读好了几本书，简单地记录一下，趁还没忘记主要的内容 岛上书店虽然作者一直在掉书袋，但总得来说还是一次挺轻松的阅读经历。情节其实很简单，就是一个在岛上开书店的男人的生活经历。从沉浸在中年丧妻的痛苦中，与上门推荐书目的女主的并不怎么愉快的第一次相遇，珍贵的孤本被偷的郁闷，收养被遗弃的女婴，与女主开始恋爱，办了一个并不成功的作者见面会，与女主结婚，最后患病辞世。 整本书的每个章节都会以某本书名">
+<meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-05-10T07:43:30.000Z">
 <meta property="article:modified_time" content="2020-01-02T10:34:26.912Z">
 <meta property="article:author" content="Odin Yu">
@@ -61,13 +62,9 @@
     <span id="nav">
       <ul>
          
-          <li><a href="/">Home</a></li>
+          <li><a href="/">首页</a></li>
          
-          <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/projects_url">Projects</a></li>
+          <li><a href="/archives/">归档</a></li>
         
       </ul>
     </span>
@@ -83,10 +80,10 @@
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
     </span>
     <br/>
     <div id="share" style="display: none">
@@ -165,13 +162,9 @@
     <div id="nav-footer" style="display: none">
       <ul>
          
-          <li><a href="/">Home</a></li>
+          <li><a href="/">首页</a></li>
          
-          <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/projects_url">Projects</a></li>
+          <li><a href="/archives/">归档</a></li>
         
       </ul>
     </div>
@@ -198,10 +191,10 @@
     </div>
 
     <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
-        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
     </div>
 
   </div>
@@ -216,13 +209,9 @@
     <nav>
       <ul>
          
-          <li><a href="/">Home</a></li>
+          <li><a href="/">首页</a></li>
          
-          <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/projects_url">Projects</a></li>
+          <li><a href="/archives/">归档</a></li>
         
       </ul>
     </nav>
@@ -253,7 +242,7 @@
   <script type="text/javascript">
   $(function() {
     // copy-btn HTML
-    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
@@ -264,7 +253,7 @@
       }
     });
     clip.on('success', function(e) {
-      e.trigger.setAttribute('aria-label', "Copied!");
+      e.trigger.setAttribute('aria-label', "复制成功!");
       e.clearSelection();
     })
   })

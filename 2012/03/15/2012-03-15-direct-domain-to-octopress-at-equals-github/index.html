@@ -12,6 +12,7 @@
 <meta property="og:url" content="https://hopes4.me/2012/03/15/2012-03-15-direct-domain-to-octopress-at-equals-github/index.html">
 <meta property="og:site_name" content="我是清都山水郞">
 <meta property="og:description" content="经过了一周时间不断加班的摧残，今天终于有空来折腾octopress了。 想着将disqus换成友言的，希望更适合中文环境。将评论导入的过程比较麻烦，先是想在wordpress装上友言的插件，然后导出所有评论，以为这样可能会比较好导入。可是打开一看，日志的url不正确，不是我需要的那种。 换种方法，从之前导入好评论的disqus里导出，然后写代码生成友言格式的xml文件。使用dom4j，还蛮简单的，">
+<meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2012-03-15T09:58:00.000Z">
 <meta property="article:modified_time" content="2020-01-02T10:34:26.889Z">
 <meta property="article:author" content="Odin Yu">
@@ -61,13 +62,9 @@
     <span id="nav">
       <ul>
          
-          <li><a href="/">Home</a></li>
+          <li><a href="/">首页</a></li>
          
-          <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/projects_url">Projects</a></li>
+          <li><a href="/archives/">归档</a></li>
         
       </ul>
     </span>
@@ -83,10 +80,10 @@
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
     </span>
     <br/>
     <div id="share" style="display: none">
@@ -174,13 +171,9 @@
     <div id="nav-footer" style="display: none">
       <ul>
          
-          <li><a href="/">Home</a></li>
+          <li><a href="/">首页</a></li>
          
-          <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/projects_url">Projects</a></li>
+          <li><a href="/archives/">归档</a></li>
         
       </ul>
     </div>
@@ -207,10 +200,10 @@
     </div>
 
     <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
-        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
     </div>
 
   </div>
@@ -225,13 +218,9 @@
     <nav>
       <ul>
          
-          <li><a href="/">Home</a></li>
+          <li><a href="/">首页</a></li>
          
-          <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/projects_url">Projects</a></li>
+          <li><a href="/archives/">归档</a></li>
         
       </ul>
     </nav>
@@ -262,7 +251,7 @@
   <script type="text/javascript">
   $(function() {
     // copy-btn HTML
-    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
@@ -273,7 +262,7 @@
       }
     });
     clip.on('success', function(e) {
-      e.trigger.setAttribute('aria-label', "Copied!");
+      e.trigger.setAttribute('aria-label', "复制成功!");
       e.clearSelection();
     })
   })

@@ -12,6 +12,7 @@
 <meta property="og:url" content="https://hopes4.me/2012/03/23/2012-03-23-put-dns-to-dnspod/index.html">
 <meta property="og:site_name" content="我是清都山水郞">
 <meta property="og:description" content="昨天晚上无意间发现域名被墙，然后再一查，原来是godaddy又被墙了，害我也受牵连。 之前早就想过要把dns解析到dnspod上去，但一直懒得动，不过这次终于决定要动一下了。 具体过程先注册dnspod，取得两个dns解析的地址   到godaddy上改成新的地址 再到dnspod上添加A记录，如下图所示   继续添加CNAME   好像过个10分钟左右，dns解析就会生效，感觉还不错。在天朝就要">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://pcly6g.bay.livefilestore.com/y1pSOJncjLGuVLZuotvVKNqUy7tzyM3hQbdqdPOthwf4ZzI5js0yPdzAFQEG4Y5htV-1VAFEOCjXUk18qAMxF8Ba0l_hnlNgpHj/ScreenShot_2012-03-23_155217%201.jpg">
 <meta property="og:image" content="http://pcly6g.bay.livefilestore.com/y1pLASrgBYeH_VTKqthvzWgFzMYPl-kI_-lA17TkUzU4BfvrF8MLwEREIEtUtuvtEoDqNq2-pCv41wm1ia31qu2Lda7HTuHE-s3/ScreenShot_2012-03-23_155253%201.jpg">
 <meta property="og:image" content="http://pcly6g.bay.livefilestore.com/y1pSOJncjLGuVIho6E017E8r7qlLnOHJSdIYEkGbh3qcLLzeO0ljLaU0UeO1VYLRCVq49JGsKDJrMKfLb1Lsmh3KHU972V7xTKD/ScreenShot_2012-03-23_155305%201.jpg">
@@ -65,13 +66,9 @@
     <span id="nav">
       <ul>
          
-          <li><a href="/">Home</a></li>
+          <li><a href="/">首页</a></li>
          
-          <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/projects_url">Projects</a></li>
+          <li><a href="/archives/">归档</a></li>
         
       </ul>
     </span>
@@ -87,10 +84,10 @@
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
       </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
     </span>
     <br/>
     <div id="share" style="display: none">
@@ -180,13 +177,9 @@
     <div id="nav-footer" style="display: none">
       <ul>
          
-          <li><a href="/">Home</a></li>
+          <li><a href="/">首页</a></li>
          
-          <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/projects_url">Projects</a></li>
+          <li><a href="/archives/">归档</a></li>
         
       </ul>
     </div>
@@ -213,10 +206,10 @@
     </div>
 
     <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
-        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
     </div>
 
   </div>
@@ -231,13 +224,9 @@
     <nav>
       <ul>
          
-          <li><a href="/">Home</a></li>
+          <li><a href="/">首页</a></li>
          
-          <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a href="/projects_url">Projects</a></li>
+          <li><a href="/archives/">归档</a></li>
         
       </ul>
     </nav>
@@ -268,7 +257,7 @@
   <script type="text/javascript">
   $(function() {
     // copy-btn HTML
-    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
     btn += '<i class="far fa-clone"></i>';
     btn += '</span>'; 
     // mount it!
@@ -279,7 +268,7 @@
       }
     });
     clip.on('success', function(e) {
-      e.trigger.setAttribute('aria-label', "Copied!");
+      e.trigger.setAttribute('aria-label', "复制成功!");
       e.clearSelection();
     })
   })
