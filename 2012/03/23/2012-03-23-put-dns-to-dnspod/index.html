@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="昨天晚上无意间发现域名被墙，然后再一查，原来是godaddy又被墙了，害我也受牵连。 之前早就想过要把dns解析到dnspod上去，但一直懒得动，不过这次终于决定要动一下了。 具体过程先注册dnspod，取得两个dns解析的地址   到godaddy上改成新的地址 再到dnspod上添加A记录，如下图所示   继续添加CNAME   好像过个10分钟左右，dns解析就会生效，感觉还不错。在天朝就要">
+<meta property="og:type" content="article">
+<meta property="og:title" content="将DNS解析到dnspod上">
+<meta property="og:url" content="http://odinyu.github.io/2012/03/23/2012-03-23-put-dns-to-dnspod/index.html">
+<meta property="og:site_name" content="我是清都山水郞">
+<meta property="og:description" content="昨天晚上无意间发现域名被墙，然后再一查，原来是godaddy又被墙了，害我也受牵连。 之前早就想过要把dns解析到dnspod上去，但一直懒得动，不过这次终于决定要动一下了。 具体过程先注册dnspod，取得两个dns解析的地址   到godaddy上改成新的地址 再到dnspod上添加A记录，如下图所示   继续添加CNAME   好像过个10分钟左右，dns解析就会生效，感觉还不错。在天朝就要">
+<meta property="og:image" content="http://pcly6g.bay.livefilestore.com/y1pSOJncjLGuVLZuotvVKNqUy7tzyM3hQbdqdPOthwf4ZzI5js0yPdzAFQEG4Y5htV-1VAFEOCjXUk18qAMxF8Ba0l_hnlNgpHj/ScreenShot_2012-03-23_155217%201.jpg">
+<meta property="og:image" content="http://pcly6g.bay.livefilestore.com/y1pLASrgBYeH_VTKqthvzWgFzMYPl-kI_-lA17TkUzU4BfvrF8MLwEREIEtUtuvtEoDqNq2-pCv41wm1ia31qu2Lda7HTuHE-s3/ScreenShot_2012-03-23_155253%201.jpg">
+<meta property="og:image" content="http://pcly6g.bay.livefilestore.com/y1pSOJncjLGuVIho6E017E8r7qlLnOHJSdIYEkGbh3qcLLzeO0ljLaU0UeO1VYLRCVq49JGsKDJrMKfLb1Lsmh3KHU972V7xTKD/ScreenShot_2012-03-23_155305%201.jpg">
+<meta property="article:published_time" content="2012-03-23T08:21:00.000Z">
+<meta property="article:modified_time" content="2020-01-02T10:34:26.892Z">
+<meta property="article:author" content="Odin Yu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://pcly6g.bay.livefilestore.com/y1pSOJncjLGuVLZuotvVKNqUy7tzyM3hQbdqdPOthwf4ZzI5js0yPdzAFQEG4Y5htV-1VAFEOCjXUk18qAMxF8Ba0l_hnlNgpHj/ScreenShot_2012-03-23_155217%201.jpg">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>将DNS解析到dnspod上</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2012/04/17/2012-04-17-bad-luck/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2012/03/20/2012-03-20-tucao/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://odinyu.github.io/2012/03/23/2012-03-23-put-dns-to-dnspod/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://odinyu.github.io/2012/03/23/2012-03-23-put-dns-to-dnspod/&text=将DNS解析到dnspod上" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://odinyu.github.io/2012/03/23/2012-03-23-put-dns-to-dnspod/&title=将DNS解析到dnspod上" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://odinyu.github.io/2012/03/23/2012-03-23-put-dns-to-dnspod/&is_video=false&description=将DNS解析到dnspod上" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=将DNS解析到dnspod上&body=Check out this article: http://odinyu.github.io/2012/03/23/2012-03-23-put-dns-to-dnspod/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://odinyu.github.io/2012/03/23/2012-03-23-put-dns-to-dnspod/&title=将DNS解析到dnspod上" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://odinyu.github.io/2012/03/23/2012-03-23-put-dns-to-dnspod/&title=将DNS解析到dnspod上" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://odinyu.github.io/2012/03/23/2012-03-23-put-dns-to-dnspod/&title=将DNS解析到dnspod上" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://odinyu.github.io/2012/03/23/2012-03-23-put-dns-to-dnspod/&title=将DNS解析到dnspod上" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://odinyu.github.io/2012/03/23/2012-03-23-put-dns-to-dnspod/&name=将DNS解析到dnspod上&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://odinyu.github.io/2012/03/23/2012-03-23-put-dns-to-dnspod/&t=将DNS解析到dnspod上" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#具体过程"><span class="toc-number">1.</span> <span class="toc-text">具体过程</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        将DNS解析到dnspod上
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">我是清都山水郞</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2012-03-23T08:21:00.000Z" itemprop="datePublished">2012-03-23</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/about-blog/">about blog</a>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>昨天晚上无意间发现域名被墙，然后再一查，原来是godaddy又被墙了，害我也受牵连。</p>
+<p>之前早就想过要把dns解析到dnspod上去，但一直懒得动，不过这次终于决定要动一下了。</p>
+<h2 id="具体过程"><a href="#具体过程" class="headerlink" title="具体过程"></a>具体过程</h2><p>先注册dnspod，取得两个dns解析的地址</p>
+<img src="http://pcly6g.bay.livefilestore.com/y1pSOJncjLGuVLZuotvVKNqUy7tzyM3hQbdqdPOthwf4ZzI5js0yPdzAFQEG4Y5htV-1VAFEOCjXUk18qAMxF8Ba0l_hnlNgpHj/ScreenShot_2012-03-23_155217%201.jpg" width="300" alt="dns解析地址" orihref="http://public.bay.livefilestore.com/y1pcOWa97XSVygnCfwMVgwdhOwD4bNjkN99XXSJ2b61KNw5m-QssfQzwn6-36yiZOM_pXFvBIW2jhDRAv7km4HPiQ/ScreenShot_2012-03-23_155217.jpg"/>
+
+<p>到godaddy上改成新的地址</p>
+<p>再到dnspod上添加A记录，如下图所示</p>
+<img src="http://pcly6g.bay.livefilestore.com/y1pLASrgBYeH_VTKqthvzWgFzMYPl-kI_-lA17TkUzU4BfvrF8MLwEREIEtUtuvtEoDqNq2-pCv41wm1ia31qu2Lda7HTuHE-s3/ScreenShot_2012-03-23_155253%201.jpg" width="300" alt="A记录" orihref="http://public.bay.livefilestore.com/y1pNkYMMZT7cFIalK-S7XPHqXAEJM90kiwhViGBK_NXsFusU9KD3IUDShCrcuZjQ85GR9sSTYhM5XDPLBtNLngJ8w/ScreenShot_2012-03-23_155253.jpg"/>
+
+<p>继续添加CNAME</p>
+<img src="http://pcly6g.bay.livefilestore.com/y1pSOJncjLGuVIho6E017E8r7qlLnOHJSdIYEkGbh3qcLLzeO0ljLaU0UeO1VYLRCVq49JGsKDJrMKfLb1Lsmh3KHU972V7xTKD/ScreenShot_2012-03-23_155305%201.jpg" width="300" alt="CNAME" orihref="http://public.bay.livefilestore.com/y1pWwvZbClwynCufLVnQqLB7TZjYjOLDFl2ufIWJ6kRL1PnmPvBj6oD4VKF99UuYA47uTjeicABw0vbrGDAakNRzA/ScreenShot_2012-03-23_155305.jpg"/>
+
+<p>好像过个10分钟左右，dns解析就会生效，感觉还不错。在天朝就要这样地折腾，唉！</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#具体过程"><span class="toc-number">1.</span> <span class="toc-text">具体过程</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://odinyu.github.io/2012/03/23/2012-03-23-put-dns-to-dnspod/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://odinyu.github.io/2012/03/23/2012-03-23-put-dns-to-dnspod/&text=将DNS解析到dnspod上" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://odinyu.github.io/2012/03/23/2012-03-23-put-dns-to-dnspod/&title=将DNS解析到dnspod上" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://odinyu.github.io/2012/03/23/2012-03-23-put-dns-to-dnspod/&is_video=false&description=将DNS解析到dnspod上" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=将DNS解析到dnspod上&body=Check out this article: http://odinyu.github.io/2012/03/23/2012-03-23-put-dns-to-dnspod/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://odinyu.github.io/2012/03/23/2012-03-23-put-dns-to-dnspod/&title=将DNS解析到dnspod上" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://odinyu.github.io/2012/03/23/2012-03-23-put-dns-to-dnspod/&title=将DNS解析到dnspod上" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://odinyu.github.io/2012/03/23/2012-03-23-put-dns-to-dnspod/&title=将DNS解析到dnspod上" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://odinyu.github.io/2012/03/23/2012-03-23-put-dns-to-dnspod/&title=将DNS解析到dnspod上" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://odinyu.github.io/2012/03/23/2012-03-23-put-dns-to-dnspod/&name=将DNS解析到dnspod上&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://odinyu.github.io/2012/03/23/2012-03-23-put-dns-to-dnspod/&t=将DNS解析到dnspod上" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 Odin Yu
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>

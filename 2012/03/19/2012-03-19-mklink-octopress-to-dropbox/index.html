@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="之前准备把博客迁移到octopress在google上找参考的时候，就看到有人说将octopress直接放到dropbox同步文件夹里，这样方便在多个环境内修改日志，而避免用git去pull再push的麻烦。不过那么大神没有给出解决文案，不过至少也给了一个好的思路。 很久以前曾经看到过dropbox的使用技巧里如何将多个文件夹都能同步，在win7环境下使用mklink就能解决。然后我再次上goog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用mklink把octopress直接放到dropbox同步文件夹内">
+<meta property="og:url" content="http://odinyu.github.io/2012/03/19/2012-03-19-mklink-octopress-to-dropbox/index.html">
+<meta property="og:site_name" content="我是清都山水郞">
+<meta property="og:description" content="之前准备把博客迁移到octopress在google上找参考的时候，就看到有人说将octopress直接放到dropbox同步文件夹里，这样方便在多个环境内修改日志，而避免用git去pull再push的麻烦。不过那么大神没有给出解决文案，不过至少也给了一个好的思路。 很久以前曾经看到过dropbox的使用技巧里如何将多个文件夹都能同步，在win7环境下使用mklink就能解决。然后我再次上goog">
+<meta property="article:published_time" content="2012-03-19T07:53:00.000Z">
+<meta property="article:modified_time" content="2020-01-02T10:34:26.890Z">
+<meta property="article:author" content="Odin Yu">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>用mklink把octopress直接放到dropbox同步文件夹内</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2012/03/19/2012-03-19-my-baby-piglet/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2012/03/15/2012-03-15-direct-domain-to-octopress-at-equals-github/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://odinyu.github.io/2012/03/19/2012-03-19-mklink-octopress-to-dropbox/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://odinyu.github.io/2012/03/19/2012-03-19-mklink-octopress-to-dropbox/&text=用mklink把octopress直接放到dropbox同步文件夹内" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://odinyu.github.io/2012/03/19/2012-03-19-mklink-octopress-to-dropbox/&title=用mklink把octopress直接放到dropbox同步文件夹内" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://odinyu.github.io/2012/03/19/2012-03-19-mklink-octopress-to-dropbox/&is_video=false&description=用mklink把octopress直接放到dropbox同步文件夹内" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=用mklink把octopress直接放到dropbox同步文件夹内&body=Check out this article: http://odinyu.github.io/2012/03/19/2012-03-19-mklink-octopress-to-dropbox/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://odinyu.github.io/2012/03/19/2012-03-19-mklink-octopress-to-dropbox/&title=用mklink把octopress直接放到dropbox同步文件夹内" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://odinyu.github.io/2012/03/19/2012-03-19-mklink-octopress-to-dropbox/&title=用mklink把octopress直接放到dropbox同步文件夹内" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://odinyu.github.io/2012/03/19/2012-03-19-mklink-octopress-to-dropbox/&title=用mklink把octopress直接放到dropbox同步文件夹内" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://odinyu.github.io/2012/03/19/2012-03-19-mklink-octopress-to-dropbox/&title=用mklink把octopress直接放到dropbox同步文件夹内" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://odinyu.github.io/2012/03/19/2012-03-19-mklink-octopress-to-dropbox/&name=用mklink把octopress直接放到dropbox同步文件夹内&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://odinyu.github.io/2012/03/19/2012-03-19-mklink-octopress-to-dropbox/&t=用mklink把octopress直接放到dropbox同步文件夹内" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#后记"><span class="toc-number">1.</span> <span class="toc-text">后记</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        用mklink把octopress直接放到dropbox同步文件夹内
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">我是清都山水郞</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2012-03-19T07:53:00.000Z" itemprop="datePublished">2012-03-19</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Octopress/">Octopress</a>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>之前准备把博客迁移到octopress在google上找参考的时候，就看到有人说将octopress直接放到dropbox同步文件夹里，这样方便在多个环境内修改日志，而避免用git去pull再push的麻烦。不过那么大神没有给出解决文案，不过至少也给了一个好的思路。</p>
+<p>很久以前曾经看到过dropbox的使用技巧里如何将多个文件夹都能同步，在win7环境下使用mklink就能解决。然后我再次上google进行了一番查询，下面给出我自己所使用的代码。</p>
+<hr>
+<pre><code>mklink /d &quot;d:\Program Files\Git\octopress\&quot; d:\dropbox\Dropbox\octopress\</code></pre><p>这里需要注意三点：</p>
+<ul>
+<li>双引号只是针对windows系统下带空格的文件夹，不加双引号会报错</li>
+<li>双引号内的octopress文件夹必须是不存在的</li>
+<li>dropbox内的octopress文件夹需要先建立好</li>
+</ul>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>今天突然发现两个也用octopress的博客的主题和我用的是一样的，这个让人感觉有点郁闷，就像开开心心地穿了件新衣服出去却发现满街都是和你穿得一样的人那种感觉。</p>
+<p>所以，等有空的时候必须要改一下主题，虽然我并不擅长css。</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#后记"><span class="toc-number">1.</span> <span class="toc-text">后记</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://odinyu.github.io/2012/03/19/2012-03-19-mklink-octopress-to-dropbox/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://odinyu.github.io/2012/03/19/2012-03-19-mklink-octopress-to-dropbox/&text=用mklink把octopress直接放到dropbox同步文件夹内" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://odinyu.github.io/2012/03/19/2012-03-19-mklink-octopress-to-dropbox/&title=用mklink把octopress直接放到dropbox同步文件夹内" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://odinyu.github.io/2012/03/19/2012-03-19-mklink-octopress-to-dropbox/&is_video=false&description=用mklink把octopress直接放到dropbox同步文件夹内" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=用mklink把octopress直接放到dropbox同步文件夹内&body=Check out this article: http://odinyu.github.io/2012/03/19/2012-03-19-mklink-octopress-to-dropbox/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://odinyu.github.io/2012/03/19/2012-03-19-mklink-octopress-to-dropbox/&title=用mklink把octopress直接放到dropbox同步文件夹内" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://odinyu.github.io/2012/03/19/2012-03-19-mklink-octopress-to-dropbox/&title=用mklink把octopress直接放到dropbox同步文件夹内" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://odinyu.github.io/2012/03/19/2012-03-19-mklink-octopress-to-dropbox/&title=用mklink把octopress直接放到dropbox同步文件夹内" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://odinyu.github.io/2012/03/19/2012-03-19-mklink-octopress-to-dropbox/&title=用mklink把octopress直接放到dropbox同步文件夹内" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://odinyu.github.io/2012/03/19/2012-03-19-mklink-octopress-to-dropbox/&name=用mklink把octopress直接放到dropbox同步文件夹内&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://odinyu.github.io/2012/03/19/2012-03-19-mklink-octopress-to-dropbox/&t=用mklink把octopress直接放到dropbox同步文件夹内" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2020 Odin Yu
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
