@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="对简易图床的改进以及博客文章编写流程的梳理对简易图床的改进虽然目前在用的基于 Cloudflare 的免费简易图床在功能上已经满足需要，但是感觉在安全性上还是需要改进的，主要在以下几个方面  默认登录密码过于简单 默认的登录是可怜的’123’，这也太不把这个服务当回事了，随便谁都可以试出密码然后看看我的图床里有哪些图片 所以这里的改进很简单，直接把密码修改为强密码 上传图片的页面不需要登录 同样的">
+    <meta name="description" content="对简易图床的改进虽然目前在用的基于 Cloudflare 的免费简易图床在功能上已经满足需要，但是感觉在安全性上还是需要改进的，主要在以下几个方面  默认登录密码过于简单 默认的登录是可怜的’123’，这也太不把这个服务当回事了，随便谁都可以试出密码然后看看我的图床里有哪些图片 所以这里的改进很简单，直接把密码修改为强密码 上传图片的页面不需要登录 同样的，任何人只要根据博客图片的地址到达图床的首">
 <meta property="og:type" content="article">
 <meta property="og:title" content="对简易图床的改进以及博客文章编写流程的梳理">
 <meta property="og:url" content="https://hopes4.me/2024/08/07/improve-image-hosting-service-and-blog-writing-process/index.html">
 <meta property="og:site_name" content="我是清都山水郞">
-<meta property="og:description" content="对简易图床的改进以及博客文章编写流程的梳理对简易图床的改进虽然目前在用的基于 Cloudflare 的免费简易图床在功能上已经满足需要，但是感觉在安全性上还是需要改进的，主要在以下几个方面  默认登录密码过于简单 默认的登录是可怜的’123’，这也太不把这个服务当回事了，随便谁都可以试出密码然后看看我的图床里有哪些图片 所以这里的改进很简单，直接把密码修改为强密码 上传图片的页面不需要登录 同样的">
+<meta property="og:description" content="对简易图床的改进虽然目前在用的基于 Cloudflare 的免费简易图床在功能上已经满足需要，但是感觉在安全性上还是需要改进的，主要在以下几个方面  默认登录密码过于简单 默认的登录是可怜的’123’，这也太不把这个服务当回事了，随便谁都可以试出密码然后看看我的图床里有哪些图片 所以这里的改进很简单，直接把密码修改为强密码 上传图片的页面不需要登录 同样的，任何人只要根据博客图片的地址到达图床的首">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-08-07T10:09:00.000Z">
 <meta property="article:modified_time" content="2024-08-07T10:09:00.000Z">
@@ -82,8 +82,10 @@
     <span id="actions">
       <ul>
         
+        <li><a class="icon" aria-label="上一篇" href="/2024/08/07/create-a-new-post-directly-in-MWeb-and-add-pictures-to-image-hosting/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
-        <li><a class="icon" aria-label="下一篇" href="/2024/08/06/create-a-new-post-directly-in-MWeb-and-add-pictures-to-image-hosting/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="下一篇" href="/2024/03/12/nostalgia-first-day-in-hongkong/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <!-- <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li> -->
@@ -96,7 +98,7 @@
     
     
       <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%B9%E7%AE%80%E6%98%93%E5%9B%BE%E5%BA%8A%E7%9A%84%E6%94%B9%E8%BF%9B%E4%BB%A5%E5%8F%8A%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E7%BC%96%E5%86%99%E6%B5%81%E7%A8%8B%E7%9A%84%E6%A2%B3%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">对简易图床的改进以及博客文章编写流程的梳理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E7%AE%80%E6%98%93%E5%9B%BE%E5%BA%8A%E7%9A%84%E6%94%B9%E8%BF%9B"><span class="toc-number">1.0.1.</span> <span class="toc-text">对简易图床的改进</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E7%BC%96%E5%86%99%E6%B5%81%E7%A8%8B"><span class="toc-number">1.0.2.</span> <span class="toc-text">博客文章编写流程</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E7%AE%80%E6%98%93%E5%9B%BE%E5%BA%8A%E7%9A%84%E6%94%B9%E8%BF%9B"><span class="toc-number">1.</span> <span class="toc-text">对简易图床的改进</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E7%BC%96%E5%86%99%E6%B5%81%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">博客文章编写流程</span></a></li></ol>
       </div>
     
   </span>
@@ -146,7 +148,7 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1 id="对简易图床的改进以及博客文章编写流程的梳理"><a href="#对简易图床的改进以及博客文章编写流程的梳理" class="headerlink" title="对简易图床的改进以及博客文章编写流程的梳理"></a>对简易图床的改进以及博客文章编写流程的梳理</h1><h3 id="对简易图床的改进"><a href="#对简易图床的改进" class="headerlink" title="对简易图床的改进"></a>对简易图床的改进</h3><p>虽然目前在用的基于 Cloudflare 的免费简易图床在功能上已经满足需要，但是感觉在安全性上还是需要改进的，主要在以下几个方面</p>
+    <h3 id="对简易图床的改进"><a href="#对简易图床的改进" class="headerlink" title="对简易图床的改进"></a>对简易图床的改进</h3><p>虽然目前在用的基于 Cloudflare 的免费简易图床在功能上已经满足需要，但是感觉在安全性上还是需要改进的，主要在以下几个方面</p>
 <ul>
 <li>默认登录密码过于简单<br> 默认的登录是可怜的’123’，这也太不把这个服务当回事了，随便谁都可以试出密码然后看看我的图床里有哪些图片<br> 所以这里的改进很简单，直接把密码修改为强密码</li>
 <li>上传图片的页面不需要登录<br> 同样的，任何人只要根据博客图片的地址到达图床的首页，就可以随便上传任意图片。这万一上传的是某些会引起问题的图片，我岂不是要倒霉。<br> 所以，这里参考图片列表页的方式，加上需要登录的限制</li>
@@ -194,7 +196,7 @@
     
     
       <div id="toc-footer" style="display: none">
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%B9%E7%AE%80%E6%98%93%E5%9B%BE%E5%BA%8A%E7%9A%84%E6%94%B9%E8%BF%9B%E4%BB%A5%E5%8F%8A%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E7%BC%96%E5%86%99%E6%B5%81%E7%A8%8B%E7%9A%84%E6%A2%B3%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">对简易图床的改进以及博客文章编写流程的梳理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E7%AE%80%E6%98%93%E5%9B%BE%E5%BA%8A%E7%9A%84%E6%94%B9%E8%BF%9B"><span class="toc-number">1.0.1.</span> <span class="toc-text">对简易图床的改进</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E7%BC%96%E5%86%99%E6%B5%81%E7%A8%8B"><span class="toc-number">1.0.2.</span> <span class="toc-text">博客文章编写流程</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E7%AE%80%E6%98%93%E5%9B%BE%E5%BA%8A%E7%9A%84%E6%94%B9%E8%BF%9B"><span class="toc-number">1.</span> <span class="toc-text">对简易图床的改进</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E7%BC%96%E5%86%99%E6%B5%81%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">博客文章编写流程</span></a></li></ol>
       </div>
     
 
