@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="我的 99 元主机有一段时间没有去管它了，主要是因为毕竟它因为便宜所以性能有限，可玩性不强。不过本着既然已经花钱了，也不能让它浪费的原则，这几天又开始在上面简单地折腾一下。 miniserve在 github 的一个自托管应用推荐的 repo 中挑到了一个简单地临时目录或文件的分享工具 - miniserve，它的主要作用就是如果临时想分享个服务器上的某个路径或文件，就可以利用它来轻松做到，并且可">
+<meta property="og:type" content="article">
+<meta property="og:title" content="最近几天折腾的几个网站和工具">
+<meta property="og:url" content="https://hopes4.me/2024/08/09/several-websites-and-tools/index.html">
+<meta property="og:site_name" content="我是清都山水郞">
+<meta property="og:description" content="我的 99 元主机有一段时间没有去管它了，主要是因为毕竟它因为便宜所以性能有限，可玩性不强。不过本着既然已经花钱了，也不能让它浪费的原则，这几天又开始在上面简单地折腾一下。 miniserve在 github 的一个自托管应用推荐的 repo 中挑到了一个简单地临时目录或文件的分享工具 - miniserve，它的主要作用就是如果临时想分享个服务器上的某个路径或文件，就可以利用它来轻松做到，并且可">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.070619.xyz/api/img/QZT5Bc">
+<meta property="og:image" content="https://img.070619.xyz/api/img/ZMtwyF">
+<meta property="article:published_time" content="2024-08-09T07:04:00.000Z">
+<meta property="article:modified_time" content="2024-08-09T07:04:00.000Z">
+<meta property="article:author" content="Odin Yu">
+<meta property="article:tag" content="clourflare">
+<meta property="article:tag" content="docker">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.070619.xyz/api/img/QZT5Bc">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>最近几天折腾的几个网站和工具</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="顶部" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="下一篇" href="/2024/08/07/create-a-new-post-directly-in-MWeb-and-add-pictures-to-image-hosting/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="返回顶部" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <!-- <li><a class="icon" aria-label="分享文章" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li> -->
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+    </span>
+    <br/>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#miniserve"><span class="toc-number">1.</span> <span class="toc-text">miniserve</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E6%9C%89%E7%94%A8%E7%9A%84%E5%8D%9A%E5%AE%A2"><span class="toc-number">2.</span> <span class="toc-text">一个有用的博客</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%8E-QuantumultX-%E5%BC%80%E5%A7%8B%E7%9A%84%E6%8A%98%E8%85%BE"><span class="toc-number">3.</span> <span class="toc-text">从 QuantumultX 开始的折腾</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%84%B6%E5%90%8E%E4%BB%8E-v2ex-%E4%B8%8A%E6%8B%A3%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A5%9E%E5%99%A8"><span class="toc-number">4.</span> <span class="toc-text">然后从 v2ex 上拣了一个神器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E5%90%8E%E8%BF%98%E6%9C%89%E4%B8%80%E4%B8%AA-Cloudflare-%E5%A4%A7%E5%85%A8"><span class="toc-number">5.</span> <span class="toc-text">最后还有一个 Cloudflare 大全</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#one-more-thing"><span class="toc-number">6.</span> <span class="toc-text">one more thing</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        最近几天折腾的几个网站和工具
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">Odin Yu</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2024-08-09T07:04:00.000Z" class="dt-published" itemprop="datePublished">2024-08-09</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/%E6%8A%98%E8%85%BE/">折腾</a> › <a class="category-link" href="/categories/%E6%8A%98%E8%85%BE/handyInfo/">handyInfo</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/clourflare/" rel="tag">clourflare</a>, <a class="p-category" href="/tags/docker/" rel="tag">docker</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p>我的 99 元主机有一段时间没有去管它了，主要是因为毕竟它因为便宜所以性能有限，可玩性不强。不过本着既然已经花钱了，也不能让它浪费的原则，这几天又开始在上面简单地折腾一下。</p>
+<h4 id="miniserve"><a href="#miniserve" class="headerlink" title="miniserve"></a>miniserve</h4><p>在 github 的一个自托管应用推荐的 repo 中挑到了一个简单地临时目录或文件的分享工具 - miniserve，它的主要作用就是如果临时想分享个服务器上的某个路径或文件，就可以利用它来轻松做到，并且可以随时关闭。官方文档中对于用 docker 方式部署和使用介绍得有点简单，自己折腾了一下，还算满意，如下截图：<br><img src="https://img.070619.xyz/api/img/QZT5Bc"></p>
+<h4 id="一个有用的博客"><a href="#一个有用的博客" class="headerlink" title="一个有用的博客"></a>一个有用的博客</h4><p><a target="_blank" rel="noopener" href="https://blog.goalonez.site/">Goalonez Blog</a></p>
+<p>对我有用的主要集中在快捷指令、Raycast、Mac、Chrome等的折腾吧。</p>
+<h4 id="从-QuantumultX-开始的折腾"><a href="#从-QuantumultX-开始的折腾" class="headerlink" title="从 QuantumultX 开始的折腾"></a>从 QuantumultX 开始的折腾</h4><p>从上面那个博客里看到 QuantumultX，不明所以。问了一下 GPT，告诉我。</p>
+<blockquote>
+<p>Quantumult X 是一款适用于 iOS 和 macOS 系统的代理软件客户端，支持多种代理协议如 Shadowsocks、ShadowsocksR、HTTP、Socks5 和 VMess。它功能强大，用于网络调试、去广告和抓包等操作。Quantumult X 是一款付费应用，售价为 7.99 美元。</p>
+</blockquote>
+<p>然后再详细地看了下它的官网，要在美区商店里才能下载，所以就只能作罢了。不过类似 QuantumultX 的服务其实对我来说还是有点用的，所以有没有白嫖的那种呢？</p>
+<p>结合自己已经白嫖的图床，在 github 上搜索到一堆可创建在 Cloudflare 上的 proxy，花了10分钟搞定。试用了一下，然后又换了几个类似的，最终可以无痛地访问 reddit、github、v2ex等网站，用来防身还是蛮不错的。</p>
+<h4 id="然后从-v2ex-上拣了一个神器"><a href="#然后从-v2ex-上拣了一个神器" class="headerlink" title="然后从 v2ex 上拣了一个神器"></a>然后从 v2ex 上拣了一个神器</h4><p>这个神器的主要作用是下载视频或音频，<a target="_blank" rel="noopener" href="https://cobalt.tools/">cobait</a>，放上它自己的 about 吧</p>
+<blockquote>
+<p>cobalt is your go-to place for downloads from social and media platforms. zero ads, trackers, or other creepy bullshit. simply paste a share link and you’re ready to rock!</p>
+</blockquote>
+<p>我试了 youtube、reddit，都可以下载，并且它还支持 bilibili、twitter、instagram等，具体如截图：<br><img src="https://img.070619.xyz/api/img/ZMtwyF"></p>
+<h4 id="最后还有一个-Cloudflare-大全"><a href="#最后还有一个-Cloudflare-大全" class="headerlink" title="最后还有一个 Cloudflare 大全"></a>最后还有一个 Cloudflare 大全</h4><p>终于有人把 Cloudflare上不错的东西收集起来，然后还做成了一个导航网站，不错的 idea！</p>
+<p><a target="_blank" rel="noopener" href="https://cloudflare.chuhai.tools/">Awesome Cloudflare</a></p>
+<h4 id="one-more-thing"><a href="#one-more-thing" class="headerlink" title="one more thing"></a>one more thing</h4><p>上面这个导航网站的主域名也是个工具导航网站，也可以关注一下</p>
+<p><a target="_blank" rel="noopener" href="https://chuhai.tools/">独立开发者出海工具栈</a></p>
+
+  </div>
+</article>
+
+
+    <div class="blog-post-comments">
+        <div id="utterances_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#miniserve"><span class="toc-number">1.</span> <span class="toc-text">miniserve</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E6%9C%89%E7%94%A8%E7%9A%84%E5%8D%9A%E5%AE%A2"><span class="toc-number">2.</span> <span class="toc-text">一个有用的博客</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%8E-QuantumultX-%E5%BC%80%E5%A7%8B%E7%9A%84%E6%8A%98%E8%85%BE"><span class="toc-number">3.</span> <span class="toc-text">从 QuantumultX 开始的折腾</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%84%B6%E5%90%8E%E4%BB%8E-v2ex-%E4%B8%8A%E6%8B%A3%E4%BA%86%E4%B8%80%E4%B8%AA%E7%A5%9E%E5%99%A8"><span class="toc-number">4.</span> <span class="toc-text">然后从 v2ex 上拣了一个神器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E5%90%8E%E8%BF%98%E6%9C%89%E4%B8%80%E4%B8%AA-Cloudflare-%E5%A4%A7%E5%85%A8"><span class="toc-number">5.</span> <span class="toc-text">最后还有一个 Cloudflare 大全</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#one-more-thing"><span class="toc-number">6.</span> <span class="toc-text">one more thing</span></a></li></ol>
+      </div>
+    
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        
+        <!-- <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a> -->
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2024
+    Odin Yu
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">首页</a></li><!--
+     --><!--
+       --><li><a href="/archives/">归档</a></li><!--
+     --><!--
+       --><li><a href="/tags/">标签</a></li><!--
+     --><!--
+       --><li><a href="/categories/">分类</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+    <script type="text/javascript">
+      var utterances_repo = 'odinyu/utteranc';
+      var utterances_issue_term = 'title';
+      var utterances_label = 'Comment';
+      var utterances_theme = 'github-light';
+
+      (function(){
+          var script = document.createElement('script');
+
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', utterances_repo);
+          script.setAttribute('issue-term', 'pathname');
+          script.setAttribute('label', utterances_label);
+          script.setAttribute('theme', utterances_theme);
+          script.setAttribute('crossorigin', 'anonymous');
+          script.async = true;
+          (document.getElementById('utterances_thread')).appendChild(script);
+      }());
+  </script>
+
+</body>
+</html>
