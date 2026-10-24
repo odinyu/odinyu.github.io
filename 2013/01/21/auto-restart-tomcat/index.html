@@ -55,7 +55,7 @@
     
 	<!-- mathjax -->
 	
-<meta name="generator" content="Hexo 6.2.0"></head>
+<meta name="generator" content="Hexo 8.1.2"></head>
 
 <body class="max-width mx-auto px3 ltr">
     
@@ -152,11 +152,11 @@ export CATALINA_HOME=/usr/local/tomcat
 export PATH=$JAVA_HOME/bin:$PATH
 
 echo &quot;restart tomcat.&quot;
-$&#123;CATALINA_HOME&#125;/bin/shutdown.sh
+${CATALINA_HOME}/bin/shutdown.sh
 sleep 150
-kill -9 `ps aux|grep java|grep -v grep|awk &#39;&#123;print $2&#125;&#39;`
+kill -9 `ps aux|grep java|grep -v grep|awk &#39;{print $2}&#39;`
 sleep 5
-$&#123;CATALINA_HOME&#125;/bin/startup.sh
+${CATALINA_HOME}/bin/startup.sh
 sleep 5
 else
 echo &quot;checked.&quot;
@@ -212,7 +212,7 @@ fi
     Copyright &copy;
     
     
-    2016-2024
+    2016-2026
     Odin Yu
   </div>
   <div class="footer-right">
