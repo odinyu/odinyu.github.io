@@ -6,22 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="有了 AI 的加持真的是爽到了，自己有什么需要就让 AI 给自己做，真正做到了『自己动手、丰衣足食』。 起因是在用 Tern 的时候，和 AI 的交互过程中产生的内容中有链接，不想先复制这段链接，然后开一个内置浏览器的 block，再粘贴链接打开页面。直接简化成了复制链接，然后按快捷键就完成了后续的动作。看上去好像并没有简化多少，但实际用起来还是蛮爽的。 这个小功能做成了之后，在继续使用 Tern">
+    <meta name="description" content="作者借助AI为Tern开发了两个小插件：复制链接后按快捷键直接打开，以及一键将含多个pane的tab移动到其他session，并提到内置Carly提供指导。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用Omp给Tern做插件">
 <meta property="og:url" content="https://hopes4.me/2026/11/06/plugin-tern-with-omp/index.html">
 <meta property="og:site_name" content="我是清都山水郞">
-<meta property="og:description" content="有了 AI 的加持真的是爽到了，自己有什么需要就让 AI 给自己做，真正做到了『自己动手、丰衣足食』。 起因是在用 Tern 的时候，和 AI 的交互过程中产生的内容中有链接，不想先复制这段链接，然后开一个内置浏览器的 block，再粘贴链接打开页面。直接简化成了复制链接，然后按快捷键就完成了后续的动作。看上去好像并没有简化多少，但实际用起来还是蛮爽的。 这个小功能做成了之后，在继续使用 Tern">
+<meta property="og:description" content="作者借助AI为Tern开发了两个小插件：复制链接后按快捷键直接打开，以及一键将含多个pane的tab移动到其他session，并提到内置Carly提供指导。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img.070619.xyz/api/img/eA7DTG">
 <meta property="article:published_time" content="2026-11-06T08:39:00.000Z">
 <meta property="article:modified_time" content="2026-11-06T08:39:00.000Z">
 <meta property="article:author" content="Odin Yu">
 <meta property="article:tag" content="AI">
+<meta property="article:tag" content="Omp">
+<meta property="article:tag" content="Tern">
 <meta property="article:tag" content="apps">
 <meta property="article:tag" content="omp">
 <meta property="article:tag" content="plugin">
 <meta property="article:tag" content="tern">
+<meta property="article:tag" content="插件开发">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://img.070619.xyz/api/img/eA7DTG">
     
@@ -132,14 +135,14 @@
       
     <div class="article-category">
         <i class="fa-solid fa-archive"></i>
-        <a class="category-link" href="/categories/%E6%8A%98%E8%85%BE/">折腾</a>
+        <a class="category-link" href="/categories/%E6%8A%98%E8%85%BE/">折腾</a> › <a class="category-link" href="/categories/%E6%8A%98%E8%85%BE/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">开发工具</a> › <a class="category-link" href="/categories/%E6%8A%98%E8%85%BE/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/%E6%95%88%E7%8E%87%E5%B7%A5%E5%85%B7/">效率工具</a>
     </div>
 
 
       
     <div class="article-tag">
         <i class="fa-solid fa-tag"></i>
-        <a class="p-category" href="/tags/AI/" rel="tag">AI</a>, <a class="p-category" href="/tags/apps/" rel="tag">apps</a>, <a class="p-category" href="/tags/omp/" rel="tag">omp</a>, <a class="p-category" href="/tags/plugin/" rel="tag">plugin</a>, <a class="p-category" href="/tags/tern/" rel="tag">tern</a>
+        <a class="p-category" href="/tags/AI/" rel="tag">AI</a>, <a class="p-category" href="/tags/Omp/" rel="tag">Omp</a>, <a class="p-category" href="/tags/Tern/" rel="tag">Tern</a>, <a class="p-category" href="/tags/apps/" rel="tag">apps</a>, <a class="p-category" href="/tags/omp/" rel="tag">omp</a>, <a class="p-category" href="/tags/plugin/" rel="tag">plugin</a>, <a class="p-category" href="/tags/tern/" rel="tag">tern</a>, <a class="p-category" href="/tags/%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91/" rel="tag">插件开发</a>
     </div>
 
 
